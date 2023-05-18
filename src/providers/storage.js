@@ -55,6 +55,7 @@ function TodoStorage({ children }) {
     // I probably don't need to copy the array this point, but I did it anyway because of time?
     const newTodos = todos;
     newTodos[editedItem].completed = newState;
+    syncItems();
   };
 
   const store = {
