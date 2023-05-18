@@ -14,16 +14,6 @@ function NoItems() {
 }
 
 function App() {
-  // const [todos, setTodos] = useState([]);
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   localStorage.getItem("todos");
-  // }, []);
-
-  // const createTodo = (text) => {
-  //   setTodos([...todos, { id: todos.length + 1, text, completed: false }]);
-  // };
   const { todos, createTodo } = useContext(TodoStorageContext);
 
   return (
