@@ -1,13 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "normalize.css";
+import "@fontsource/roboto";
+import "@fontsource/roboto-slab";
+import { createGlobalStyle } from "styled-components";
+import { TodoStorage } from "./providers/storage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const Styles = createGlobalStyle`
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .roboto-slab {
+    font-family: 'Roboto Slab', serif;
+  }
+`;
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Styles />
+    <TodoStorage>
+      <App />
+    </TodoStorage>
   </React.StrictMode>
 );
 
